@@ -1,0 +1,21 @@
+{
+  "name": "taller",
+  "version": "1.0.0",
+  "description": "teller",
+  "main": "taller.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laryymemo/taller.git"
+  },
+  "keywords": [],
+  "author": "Larry k yonga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laryymemo/taller/issues"
+  },
+  "homepage": "https://github.com/Laryymemo/taller#readme"
+}
