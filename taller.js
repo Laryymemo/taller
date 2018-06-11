@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const registro = require('./server.js');
 const datos = require('./server.js');
+const alerta = require('./server.js');
+const seguimiento = require('./server.js')
 const bodyParser = require('body-parser');
 
 
@@ -33,6 +35,34 @@ app.post("/api/v1/datos/create",(req,res) => {
    newDatos.save((err,datos)=>{
      if(err) throw err;
      res.send(datos)
+ })
+});
+
+app.post("/api/v1/alerta/create",(req,res) => {
+  const {tipo,fecha,persona,status} = req.body
+  let newAlerta = alerta({
+    tipo:tipo,
+    fecha:fecha,
+    persona:persona,
+    status:status
+  })
+   newAlerta.save((err,alerta)=>{
+     if(err) throw err;
+     res.send(alerta)
+ })
+});
+
+app.post("/api/v1/seguimiento/create",(req,res) => {
+  const {lugar,fecha,persona,status} = req.body
+  let newSeguimiento = seguimiento({
+    lugar:lugar,
+    fecha:fecha,
+    persona:persona,
+    status:status
+  })
+   newSeguimiento.save((err,seguimiento)=>{
+     if(err) throw err;
+     res.send(seguimiento)
  })
 });
 

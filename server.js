@@ -18,8 +18,25 @@ const Schema = mongoose.Schema,
             compostura:String,
             status:String
       });
-
+      const alertaSchema = new Schema({
+            idnum:ObjectId,
+            tipo:String,
+            fecha:String,
+            persona:String,
+            status:String
+      });
+      const seguimientoSchema = new Schema({
+            idnum:ObjectId,
+            lugar:String,
+            fecha:String,
+            persona:String,
+            status:String
+      });
+var alerta = mongoose.model('alerta',alertaSchema);
 var datos = mongoose.model('datos',datosSchema);
 var registro = mongoose.model('registro',registroSchema);
+var seguimiento =  mongoose.model('seguimiento', seguimientoSchema);
 module.exports = registro
 module.exports = datos
+module.exports = alerta
+module.exports = seguimiento
